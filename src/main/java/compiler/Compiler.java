@@ -1,6 +1,7 @@
 package compiler;
 
 import common.EOFMode;
+import common.ParseException;
 import common.Parser;
 import org.objectweb.asm.*;
 import org.objectweb.asm.util.TraceClassVisitor;
@@ -17,7 +18,7 @@ import static org.objectweb.asm.Opcodes.*;
 
 public class Compiler {
     
-    public static void main(String[] args) throws IOException, CompilerException {
+    public static void main(String[] args) throws IOException, CompilerException, ParseException {
         PrintWriter printWriter = new PrintWriter(System.out);
         
         LoopCommand root = Parser.parse(new String(Files.readAllBytes(Paths.get("./in.bf"))));
@@ -44,9 +45,9 @@ public class Compiler {
         }
         CompilerOptions options = new CompilerOptions(eofMode);
         
-        ClassWriter cv = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
+        ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
         
-        TraceClassVisitor cw = new TraceClassVisitor(cv, printWriter);
+        //TraceClassVisitor cw = new TraceClassVisitor(cv, printWriter);
         
         cw.visit(V11, ACC_PUBLIC + ACC_SUPER,
                 "Kompilerad", null, "java/lang/Object", null);
@@ -126,7 +127,7 @@ public class Compiler {
         
         
         cw.visitEnd();
-        byte[] b = cv.toByteArray();
+        byte[] b = cw.toByteArray();
         
         FileOutputStream fos = new FileOutputStream("Kompilerad.class");
         
