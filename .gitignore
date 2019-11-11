@@ -1,2 +1,5 @@
 .idea
 *.iml
+target
+/in.bf
+/Kompilerad.class
