@@ -6,7 +6,7 @@ import common.tree.*;
 import java.util.ArrayList;
 
 public class Parser {
-    public static LoopCommand parse(String file) throws CompilerException {
+    public static LoopCommand parse(String file) throws ParseException {
         ArrayList<CommandType> commands = new ArrayList<>();
 
         String everything = file.replaceAll("[^<>\\+\\-\\[\\]\\.\\,]+", "");
@@ -39,7 +39,7 @@ public class Parser {
                     commands.add(CommandType.LOOPEND);
                     break;
                 default:
-                    throw new CompilerException("Invalid token '" + c + "'");
+                    throw new ParseException("Invalid token '" + c + "'");
             }
         }
 
