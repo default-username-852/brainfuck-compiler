@@ -1,0 +1,2 @@
+Körtid på interpreter på mandelbrot.bf: 14.447s
+Körtid på kompilerad kod på mandelbrot.bf: 23.1s
