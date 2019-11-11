@@ -104,7 +104,7 @@ public class Compiler {
         
         mv1.visitLabel(l0);
         
-        Compiler.generateCode(root.getChildren(), mv1, options); //TODO: read compiler options from args
+        Compiler.generateCode(root.getChildren(), mv1, options);
         
         //Finish method definition
         mv1.visitInsn(RETURN);
