@@ -1,4 +1,4 @@
-package tree;
+package common.tree;
 
 public class Command {
 }

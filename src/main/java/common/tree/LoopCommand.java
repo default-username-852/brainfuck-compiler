@@ -1,4 +1,4 @@
-package tree;
+package common.tree;
 
 import org.objectweb.asm.Label;
 

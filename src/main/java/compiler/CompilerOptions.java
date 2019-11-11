@@ -1,5 +1,7 @@
 package compiler;
 
+import common.EOFMode;
+
 public class CompilerOptions {
     public EOFMode eofMode;
     

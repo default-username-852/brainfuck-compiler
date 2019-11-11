@@ -1,4 +1,4 @@
-package compiler;
+package common;
 
 public enum EOFMode {
     MINUS_ONE,

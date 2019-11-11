@@ -1,11 +1,13 @@
 package compiler;
 
+import common.EOFMode;
+import common.Parser;
 import org.objectweb.asm.*;
 import org.objectweb.asm.util.TraceClassVisitor;
-import tree.Command;
-import tree.LoopCommand;
-import tree.MultipleCommand;
-import tree.NormalCommand;
+import common.tree.Command;
+import common.tree.LoopCommand;
+import common.tree.MultipleCommand;
+import common.tree.NormalCommand;
 
 import java.io.*;
 import java.nio.file.Files;

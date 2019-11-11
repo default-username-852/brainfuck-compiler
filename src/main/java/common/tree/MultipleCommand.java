@@ -1,6 +1,6 @@
-package tree;
+package common.tree;
 
-import compiler.CommandType;
+import common.CommandType;
 
 public class MultipleCommand extends NormalCommand {
     private int amount;

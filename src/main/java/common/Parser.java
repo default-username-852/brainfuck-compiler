@@ -1,6 +1,7 @@
-package compiler;
+package common;
 
-import tree.*;
+import compiler.CompilerException;
+import common.tree.*;
 
 import java.util.ArrayList;
 
